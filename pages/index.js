@@ -351,7 +351,7 @@ export default function Home(props) {
 
           </div>
        
-          <div className='col-lg-7 col-11 col-md-8 py-3'>
+          <div className='col-lg-7 col-11 col-md-8 py-3 pb-5'>
               <h3 className='text-center'>Staking</h3>
               <div className='w-100 p-3 px-4 bg_link_input farm_text'>
                
