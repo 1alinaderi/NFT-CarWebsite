@@ -42,12 +42,12 @@
 }
 
   .swiper-button-prev{
-    background: #16123f !important;
+    background: #fd562a !important;
     padding: 10px !important;    
     border-radius: 50% !important;
     height: 42px !important;
     width: 42px !important;
-    background: #16123f !important;
+    background: #fd562a !important;
     /* padding: 10px !important; */
     overflow: hidden;
     &::after {
@@ -57,12 +57,12 @@
     }
   }
   .swiper-button-next{
-    background: #16123f !important;
+    background: #fd562a !important;
     padding: 10px !important;    
     border-radius: 50% !important;
     height: 42px !important;
     width: 42px !important;
-    background: #16123f !important;
+    background: #fd562a !important;
     /* padding: 10px !important; */
     overflow: hidden;
     &::after {
@@ -75,13 +75,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: #fff;
 }
 a{
     text-decoration: none !important ;
 }
 body {
-    background: rgb(171,214,153);
-    background: linear-gradient(202deg, rgb(121, 168, 101) 0%, rgba(121,168,101,1) 16%, #fff6c1 100%);
+    background: rgb(36,12,124);
+    background: linear-gradient(65deg, rgba(36,12,124,1) 0%, rgba(68,44,154,1) 50%, rgba(146,131,198,1) 100%);
     transition: all 3s;
     animation: bg_red 5s infinite;
     background-repeat: no-repeat;
@@ -122,28 +123,31 @@ body {
  }
 
 .button_home{
-    background-color: #16123f;
+    background-color: #fd562a;
     border-radius: 4px;
     color: #fff;
     transition: .3s;
-    border: 2px solid #16123f;
+    border: 2px solid #fd562a;
     text-decoration: none !important;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 900;
     &:hover {
-        color: #16123f;
+        color: #fd562a;
         font-weight: bold;
         background-color: transparent;
-        border: 2px solid #16123f;
+        border: 2px solid #fd562a;
     }
 }
 
 .header_bg{
     img {
-        width: 70px;
+        width: 80px;
     }
     span {
         font-family: cursive;
-        font-size: 22px;
-        font-weight: 500;
+        font-size: 24px;
+        font-weight: 700;
     }
 }
 
@@ -264,4 +268,13 @@ body {
 
 .img_farm{
     width: 40px;
+}
+
+.text_mail{
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    &:hover {
+        color: #fff;
+    }
 }
