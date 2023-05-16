@@ -352,7 +352,7 @@ export default function Home(props) {
           </div>
        
           <div className='col-lg-7 col-11 col-md-8 py-3'>
-              <h3 className='text-center'>Stacking</h3>
+              <h3 className='text-center'>Staking</h3>
               <div className='w-100 p-3 px-4 bg_link_input farm_text'>
                
                   <div className='w-100 d-flex flex-wrap justify-content-between py-2 '>
@@ -376,11 +376,7 @@ export default function Home(props) {
                   </div>
               </div>
           </div>
-          <div className='w-100 py-3 mt-4 d-flex justify-content-center'>
-          <a className='text_mail' href='mailto:malinaderi1@outlook.com'>
-            Powered by{" "}<b>malinaderi1@outlook.com</b> 
-          </a>
-        </div>
+         
           
         </main>
        
