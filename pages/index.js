@@ -80,11 +80,8 @@ export default function Home(props) {
 
   useEffect(() => {
     setWalletAddress(ethereumClient?.getAccount()?.address);
-
     setDefaultChain(bsc);
-    
   }, [ethereumClient?.getAccount()?.address]);
-  console.log(ethereumClient)
   useEffect(
     (e) => {
       async function setapprov() {
@@ -92,8 +89,10 @@ export default function Home(props) {
           const currentAllowance = await Aipepecontract?.methods
             ?.allowance(walletAddress, RouterAddress)
             ?.call();
-          if (currentAllowance < migmigeinput * 1000000000) {
+          if (currentAllowance > (migmigeinput * 1000000000)) {
             setisapproved(true);
+          }else {
+            setisapproved(false);
           }
         }
       }
@@ -175,7 +174,7 @@ export default function Home(props) {
     const currentAllowance = await Aipepecontract?.methods
       ?.allowance(walletAddress, RouterAddress)
       ?.call();
-    if (currentAllowance < migmigeinput * 1000000000) {
+    if (currentAllowance < (migmigeinput * 1000000000)) {
       const newAllowance = new web3.utils.BN("2")
         ?.pow(new web3.utils.BN("256"))
         ?.sub(new web3.utils.BN("1"));
