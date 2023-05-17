@@ -67,7 +67,6 @@ export default function Home(props) {
   const migmigAddress = '0xf2b9b91EcF8F34f9012dddcD874696424C0921B4';
   const RouterAddress = '0x10ed43c718714eb63d5aa57b78b54704e256024e';
   const WBNBAddress = '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c';
-
   const Aipepecontract = new web3.eth.Contract(AbiToken, migmigAddress);
   const Routercontract = new web3.eth.Contract(
     AbiRouterContract,
@@ -80,7 +79,7 @@ export default function Home(props) {
     }, [ethereumClient?.getAccount()?.address]);
     useEffect(() => {
       const sellAmount = 10 ** 18; // 100 DAI = 10^20 wei
-      const sellAmountaipepe = 10 ** 9; // 100 DAI = 10^20 wei
+      const sellAmountaipepe = 10 ** 15; // 100 DAI = 10^20 wei
       async function giveInformation() {
         const response = await fetch(
           `https://bsc.api.0x.org/swap/v1/quote?buyToken=${migmigAddress}&sellToken=${WBNBAddress}&sellAmount=${sellAmount}&excludedSources=LiquidityProvider`
@@ -93,7 +92,7 @@ export default function Home(props) {
           `https://bsc.api.0x.org/swap/v1/quote?buyToken=${WBNBAddress}&sellToken=${migmigAddress}&sellAmount=${sellAmountaipepe}&excludedSources=LiquidityProvider`
         );
         const quote = await response.json();
-        setPricemigmig(quote.price);
+        setPricemigmig((quote.buyAmount * 0.000000000000000001).toFixed(18));
       }
       giveInformation();
       giveInformationaipepe();
@@ -316,7 +315,7 @@ export default function Home(props) {
                     <span className='icon_Token'>
                         <img  src='/BNB.png'/>
                     </span>
-                       <input placeholder='0.00' value={migmigeinput ? (migmigeinput * pricemigmig).toFixed(18) : "" } disabled type="text" className='form-field w-100 ' /> 
+                       <input placeholder='0.00' value={migmigeinput ? ((migmigeinput * pricemigmig) / 1000000).toFixed(18) : "" } disabled type="text" className='form-field w-100 ' /> 
                  </div>
                  )}
                  <div className='w-100 d-flex justify-content-center'>
